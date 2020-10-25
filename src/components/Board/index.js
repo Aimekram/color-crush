@@ -1,19 +1,22 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+
+import { storeInitialState } from "../../actions";
+import { generateItems, dataToStore } from "../../helpers/generateItems";
+
 
 import BoardItem from "../BoardItem";
-import getRandom from "../../helpers/getRandom";
-import { COLORS } from "../../constants";
+
 import { StyledBoard } from "../../styledComponents/StyledBoard";
 
 const Board = () => {
-    const items = []
+    const dispatch = useDispatch();
 
-    const renderItems = () => {
-        for(let i=0; i < 24; i++) { 
-            items.push(<BoardItem key={`boardItem-${i}`} color={getRandom(COLORS)}/>) 
-        }
-    }
-    renderItems()
+    // generate items to render
+    const items = generateItems().map(({key, color}) => <BoardItem key={key} color={color}/>)
+
+    // populate store with initial data
+    dispatch(storeInitialState(dataToStore))
 
     return (
         <StyledBoard className="board">{items}</StyledBoard>
