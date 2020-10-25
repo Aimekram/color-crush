@@ -1,8 +1,15 @@
 import React from "react";
+import { GlobalStyles } from "../../styledComponents/GlobalStyle";
+
+import Board from "../Board";
+
 
 const App = () => {
   return (
-    <div>Hey ho, let's go</div>
+    <>
+      <GlobalStyles />
+      <Board />
+    </>
   );
 }
 
