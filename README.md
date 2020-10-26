@@ -1,10 +1,10 @@
 # Color Crush
 
-Browser game with clicking, blocks and a colors.
+Browser game with clicking, blocks and a lot of colors (not really).
 
 ### To play
 
-* go to [https://aimekram.github.io/color_crush/](https://aimekram.github.io/color_crush/)
+* go to [https://aimekram.github.io/color_crush](https://aimekram.github.io/color_crush)
 
 
 ### To run the project locally
