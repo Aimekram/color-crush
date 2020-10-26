@@ -1,6 +1,6 @@
 {
   "short_name": "Color Crush",
-  "name": "Create React App Sample",
+  "name": "Browser game with a lot of colors",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
