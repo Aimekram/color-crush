@@ -3,11 +3,16 @@ import {deleteBlock, moveColors} from "../helpers/deleteBlock";
 
 const initialState = dataToStore();
 
-const boardItemsReducer = (state = initialState, action) => {
+const boardItemsReducer = (state = {board: initialState, score: 0}, action) => {
     switch(action.type) {
         case "CLICK_HANDLED":
-            action.payload.toDelete.map(item => state = deleteBlock(state, item.col, item.row))
-            return state.map(column => moveColors(column));
+            const points = action.payload.toDelete.length
+            action.payload.toDelete.map(item => state.board = deleteBlock(state.board, item.col, item.row))
+            const newBoard = state.board.map(column => moveColors(column))
+            return {...state,
+                    board: newBoard,
+                    score: state.score + points
+                }
             
         default:
             return state;

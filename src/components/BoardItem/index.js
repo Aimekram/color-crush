@@ -4,11 +4,11 @@ import { changeBlocks } from "../../actions";
 
 import checkAdjacentBlocks from "../../helpers/checkAdjacentBlocks";
 
-import { StyledItem } from "../../styledComponents/StyledBoard";
+import { StyledItem } from "../../styledComponents/styled";
 
 const BoardItem = ({ color, col, row }) => {
     const dispatch = useDispatch();
-    const data = useSelector(state => state)
+    const data = useSelector(state => state.board)
 
     const handleClick = event => {
         const toDelete = checkAdjacentBlocks(event, data)

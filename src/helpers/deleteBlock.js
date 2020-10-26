@@ -1,9 +1,9 @@
 import { newColor } from "./generateItems";
 
-export const deleteBlock = (state, col, row) => {
-    return state.map((prevCol, prevColIndex) => {
+export const deleteBlock = (board, col, row) => {
+    return board.map((prevCol, prevColIndex) => {
         if(prevColIndex === col) { 
-            return state[col].map((color, index) => index === row ? "white" : color)
+            return board[col].map((color, index) => index === row ? "white" : color)
         }
         return prevCol
     })
@@ -19,6 +19,6 @@ export const moveColors = (column) => {
         return true
     }) 
     movedColors.push(...filteredColumn)
-    
+
     return movedColors
 }

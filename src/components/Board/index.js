@@ -2,10 +2,10 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 import BoardItem from "../BoardItem";
-import { StyledBoard } from "../../styledComponents/StyledBoard";
+import { StyledBoard } from "../../styledComponents/styled";
 
 const Board = () => {
-    const data = useSelector(state => state)
+    const data = useSelector(state => state.board)
 
     return (
         <StyledBoard>

@@ -9,7 +9,6 @@ const checkAdjacentBlocks = (event, data) => {
             return data[this.col][this.row] 
         },
     };
-    console.log(clicked)
     
     // find adjacent blocks with same color as clicked
     const findSameColorAdjacent = (col, row) => getAdjacentBlocks(data, col, row).filter(block => block.color === clicked.color)
