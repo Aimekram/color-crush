@@ -1,10 +1,17 @@
-const boardItemsReducer = (state = {}, action) => {
+import { dataToStore } from "../helpers/generateItems";
+import deleteBlock from "../helpers/deleteBlock";
+
+const initialState = dataToStore();
+
+const boardItemsReducer = (state = initialState, action) => {
     switch(action.type) {
-        case "STATE_STORED":
-            return {...state, ...action.payload }
+        case "CLICK_HANDLED":
+            action.payload.toDelete.map(item => state = deleteBlock(state, item.row, item.col))
+            return state;
+            
         default:
             return state;
     }
 }
-
+        
 export default boardItemsReducer;

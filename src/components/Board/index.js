@@ -1,25 +1,24 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-
-import { storeInitialState } from "../../actions";
-import { generateItems, dataToStore } from "../../helpers/generateItems";
-
+import { useSelector } from "react-redux";
 
 import BoardItem from "../BoardItem";
-
 import { StyledBoard } from "../../styledComponents/StyledBoard";
 
 const Board = () => {
-    const dispatch = useDispatch();
-
-    // generate items to render
-    const items = generateItems().map(({key, color}) => <BoardItem key={key} color={color}/>)
-
-    // populate store with initial data
-    dispatch(storeInitialState(dataToStore))
+    const data = useSelector(state => state)
 
     return (
-        <StyledBoard className="board">{items}</StyledBoard>
+        <StyledBoard>
+            {!!data ? 
+                data.map((row, rowIndex) => { 
+                    return row.map((color, colIndex) => { 
+                        return <BoardItem key={`boarditem-${colIndex}`} color={color} col={colIndex} row={rowIndex}/>
+                    })
+                })
+                : 
+                <p style={{color: "white"}}>"Loading..."</p>
+            }
+        </StyledBoard>
     )
 }
 

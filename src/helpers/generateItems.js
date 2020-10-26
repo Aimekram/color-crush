@@ -3,14 +3,12 @@ import { ROWS_COUNT, COLUMNS_COUNT, COLORS } from "../constants";
 
 const itemsCount = ROWS_COUNT*COLUMNS_COUNT;
 
-export const dataToStore = Array.from(Array(ROWS_COUNT), ()=> []);
-
-export const generateItems = () => {
-    const items = [];
+export const dataToStore = () => {
+    const data = Array.from(Array(ROWS_COUNT), ()=> []);
     for(let i=0; i < itemsCount; i++) { 
         const color = getRandom(COLORS);
-        items.push({ key: `boardItem-${i}`, color });
-        dataToStore[Math.floor(i/COLUMNS_COUNT)].push(color);
+        const rowNr = [Math.floor(i/COLUMNS_COUNT)];
+        data[rowNr].push(color);
     }
-    return items
+    return data
 }
