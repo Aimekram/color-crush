@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 import BoardItem from "../BoardItem";
-import { StyledBoard } from "../../styledComponents/styled";
+import { StyledBoard, ErrorInfo } from "../../styledComponents/styled";
 
 const Board = () => {
     const data = useSelector(state => state.board)
@@ -16,7 +16,7 @@ const Board = () => {
                     })
                 })
                 : 
-                <p style={{color: "white"}}>"Loading..."</p>
+                <ErrorInfo>Oups, there's problem with store connection</ErrorInfo>
             }
         </StyledBoard>
     )

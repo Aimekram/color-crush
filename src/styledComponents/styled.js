@@ -1,8 +1,9 @@
 import styled from "styled-components";
+import {ROWS_COUNT, COLUMNS_COUNT} from "../constants";
 
 export const StyledBoard = styled.ul`
-  width: 600px;
-  height: 400px;
+  width: ${COLUMNS_COUNT*100}px;
+  height: ${ROWS_COUNT*100}px;
   outline: 2px solid black;
   margin: 50px auto;
   display: flex;
@@ -27,4 +28,8 @@ export const StyledScore = styled.h2`
   font-size: 3rem;
   text-align: center;
   margin-top: 10vh;
+`
+
+export const ErrorInfo = styled.p`
+  color: white;
 `

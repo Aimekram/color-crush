@@ -1,3 +1,3 @@
-export const COLORS = ["purple", "green", "red", "yellow"]
-export const ROWS_COUNT = 4;
-export const COLUMNS_COUNT = 6;
+export const COLORS = ["purple", "green", "red", "yellow", "DarkTurquoise"]
+export const ROWS_COUNT = 5;
+export const COLUMNS_COUNT = 7;
