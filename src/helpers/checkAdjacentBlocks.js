@@ -6,16 +6,17 @@ const checkAdjacentBlocks = (event, data) => {
         col: parseInt(event.target.dataset.col), 
         row: parseInt(event.target.dataset.row),
         get color() {
-            return data[this.row][this.col] 
+            return data[this.col][this.row] 
         },
     };
+    console.log(clicked)
     
     // find adjacent blocks with same color as clicked
     const findSameColorAdjacent = (col, row) => getAdjacentBlocks(data, col, row).filter(block => block.color === clicked.color)
-    
+
     // make array of blocks with color same as clicked
     let same = findSameColorAdjacent(clicked.col, clicked.row)
-
+    
     // create array to store unique blocks with same color as clicked
     const toDelete = [{...clicked}]
     
@@ -31,7 +32,7 @@ const checkAdjacentBlocks = (event, data) => {
         }
         same.shift()
     }
-
+    
     return toDelete
 }
 

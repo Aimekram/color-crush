@@ -6,7 +6,7 @@ export const StyledBoard = styled.ul`
   outline: 2px solid black;
   margin: 150px auto;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   background-color: black;
 `
 

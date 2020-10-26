@@ -10,9 +10,9 @@ const Board = () => {
     return (
         <StyledBoard>
             {!!data ? 
-                data.map((row, rowIndex) => { 
-                    return row.map((color, colIndex) => { 
-                        return <BoardItem key={`boarditem-${colIndex}`} color={color} col={colIndex} row={rowIndex}/>
+                data.map((col, colIndex) => { 
+                    return col.map((color, rowIndex) => { 
+                        return <BoardItem key={`boarditem-${colIndex}-${rowIndex}`} color={color} col={colIndex} row={rowIndex}/>
                     })
                 })
                 : 

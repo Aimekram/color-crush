@@ -6,7 +6,7 @@ const initialState = dataToStore();
 const boardItemsReducer = (state = initialState, action) => {
     switch(action.type) {
         case "CLICK_HANDLED":
-            action.payload.toDelete.map(item => state = deleteBlock(state, item.row, item.col))
+            action.payload.toDelete.map(item => state = deleteBlock(state, item.col, item.row))
             return state;
             
         default:

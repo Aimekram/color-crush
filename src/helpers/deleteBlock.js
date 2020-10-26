@@ -1,9 +1,9 @@
-const deleteBlock = (state, row, col) => {
-    return state.map((prevRow, prevRowIndex) => {
-        if(prevRowIndex === row) { 
-            return state[row].map((color, index) => index === col ? "white" : color)
+const deleteBlock = (state, col, row) => {
+    return state.map((prevCol, prevColIndex) => {
+        if(prevColIndex === col) { 
+            return state[col].map((color, index) => index === row ? "white" : color)
         }
-        return prevRow
+        return prevCol
     })
 }
 
