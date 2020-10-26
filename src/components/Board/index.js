@@ -16,7 +16,7 @@ const Board = () => {
                     })
                 })
                 : 
-                <ErrorInfo>Oups, there's problem with store connection</ErrorInfo>
+                <ErrorInfo>Oups, there's a problem with store connection</ErrorInfo>
             }
         </StyledBoard>
     )
