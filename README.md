@@ -10,7 +10,8 @@ Browser game with clicking, blocks and a lot of colors (not really).
 ### To run the project locally
 
 * clone this repository
-* while inside it's folder run: `npm start`
-* open [http://localhost:3000](http://localhost:3000) to view it your the browser
+* go to /color_crush folder and run: `npm install` to install all needed dependencies
+* run: `npm start`
+* open [http://localhost:3000](http://localhost:3000) to view it in your the browser
 
 
