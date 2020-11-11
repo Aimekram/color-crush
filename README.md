@@ -13,4 +13,9 @@ Browser game with clicking, disappearing blocks and a lot of colors (not really)
 * run: `npm start`
 * open [http://localhost:3000](http://localhost:3000) to view it in your browser
 
+### Technologies used:
 
+* HTML
+* styled components
+* React.js
+* Redux
