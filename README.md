@@ -15,7 +15,6 @@ Browser game with clicking, disappearing blocks and a lot of colors (not really)
 
 ### Technologies used:
 
-* HTML
-* styled components
 * React.js
+* Styled Components
 * Redux
